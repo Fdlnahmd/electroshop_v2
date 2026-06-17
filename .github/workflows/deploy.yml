@@ -20,9 +20,25 @@ jobs:
           key: ${{ secrets.VPS_SSH_KEY }}
           port: ${{ secrets.VPS_PORT }}
           script: |
-            cd /var/www/electroshop
+            if [ ! -d "/var/www/electroshop_v2" ]; then
+              git clone git@github.com:Fdlnahmd/electroshop_v2.git /var/www/electroshop_v2
+            fi
+            cd /var/www/electroshop_v2
             git pull origin main
             echo "${{ secrets.ENV_FILE_CONTENT }}" > .env
             docker compose down
             docker compose up -d --build
+            
+            echo "Menunggu container backend berjalan..."
+            for i in {1..30}; do
+              if [ "$(docker inspect -f '{{.State.Running}}' electroshop_backend 2>/dev/null)" = "true" ]; then
+                echo "Container backend aktif!"
+                break
+              fi
+              sleep 2
+            done
+
+            docker exec electroshop_backend php artisan migrate --force
+            docker exec electroshop_backend php artisan storage:link --relative 2>/dev/null || docker exec electroshop_backend php artisan storage:link || true
+            docker exec electroshop_backend php artisan optimize
             docker image prune -f

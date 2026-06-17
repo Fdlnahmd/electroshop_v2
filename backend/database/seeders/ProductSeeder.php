@@ -9,17 +9,6 @@ class ProductSeeder extends Seeder
 {
     public function run(): void
     {
-        // Bersihkan data lama agar produk & kategori tidak bercampur
-        DB::statement('SET FOREIGN_KEY_CHECKS=0;');
-        DB::table('order_status_history')->truncate();
-        DB::table('order_items')->truncate();
-        DB::table('orders')->truncate();
-        DB::table('reviews')->truncate();
-        DB::table('cart')->truncate();
-        DB::table('products')->truncate();
-        DB::table('categories')->truncate();
-        DB::statement('SET FOREIGN_KEY_CHECKS=1;');
-
         // ── 1. Tambah kategori gadget konsumer ──────────────────────────────
         $categoryData = [
             ['name' => 'Smartphones',  'slug' => 'smartphones',  'description' => 'Smartphone dan handphone terbaru'],

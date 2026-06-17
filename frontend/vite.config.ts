@@ -15,8 +15,9 @@ export default defineConfig(() => {
       },
     },
     server: {
-      host: '0.0.0.0',  // Wajib agar bisa diakses dari luar container
+      host: '0.0.0.0', // Wajib agar bisa diakses dari luar container
       port: 3000,
+      allowedHosts: true, // Izinkan akses dari domain luar (seperti Cloudflare Tunnel)
       hmr: process.env.DISABLE_HMR !== 'true',
       watch: process.env.DISABLE_HMR === 'true' ? null : {},
       // Proxy semua /api ke Laravel backend — satu domain, tanpa CORS & subdomain masalah

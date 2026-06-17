@@ -25,7 +25,9 @@ jobs:
             fi
             cd /var/www/electroshop_v2
             git pull origin main
-            echo "${{ secrets.ENV_FILE_CONTENT }}" > .env
+            if [ ! -f ".env" ]; then
+              cp .env.example .env
+            fi
             docker compose down
             docker compose up -d --build
             

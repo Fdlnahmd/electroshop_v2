@@ -60,115 +60,46 @@ export function HomePage() {
     };
     fetchProducts();
   }, [searchTerm, activeCategory, apiUrl]);
-
   return (
     <div className="flex flex-col min-h-screen">
       {!searchTerm && activeCategory === 'All' && (
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-6 w-full">
           <section className="bg-[#1A1A2E] rounded-xl relative overflow-hidden flex flex-col justify-center px-6 sm:px-12 py-12 text-white shadow-lg min-h-[220px]">
-            {/* Decorative background blob */}
             <div className="absolute right-0 top-0 w-1/2 h-full bg-white/5 rotate-12 transform translate-x-12 pointer-events-none" />
-
-            {/* Floating product images */}
             <div className="absolute right-6 sm:right-16 top-1/2 -translate-y-1/2 hidden sm:flex items-center justify-center" style={{ width: '320px', height: '220px' }}>
-              {/* Back product: headphones */}
-              <div
-                className="absolute"
-                style={{
-                  right: '130px',
-                  top: '30px',
-                  animation: 'floatSlow 5s ease-in-out infinite',
-                  animationDelay: '1s',
-                }}
-              >
+              {/* Back: IC Chip */}
+              <div className="absolute" style={{ right: '130px', top: '30px', animation: 'floatSlow 5s ease-in-out infinite', animationDelay: '1s' }}>
                 <div className="w-24 h-24 rounded-2xl overflow-hidden shadow-2xl border border-white/10 bg-white/5 backdrop-blur-sm" style={{ boxShadow: '0 0 30px rgba(79,172,254,0.18)' }}>
-                  <img
-                    src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=300&q=80"
-                    alt="Headphones"
-                    className="w-full h-full object-cover"
-                  />
+                  <img src="https://images.unsplash.com/photo-1601662528567-526cd06f6582?w=300&q=80" alt="IC Chip" className="w-full h-full object-cover" />
                 </div>
               </div>
-
-              {/* Center product: laptop (main) */}
-              <div
-                className="absolute"
-                style={{
-                  right: '10px',
-                  top: '-10px',
-                  animation: 'floatSlow 4.5s ease-in-out infinite',
-                  animationDelay: '0s',
-                }}
-              >
+              {/* Center: Arduino Board */}
+              <div className="absolute" style={{ right: '10px', top: '-10px', animation: 'floatSlow 4.5s ease-in-out infinite', animationDelay: '0s' }}>
                 <div className="w-36 h-36 rounded-2xl overflow-hidden shadow-2xl border border-white/20 bg-white/5" style={{ boxShadow: '0 0 40px rgba(79,172,254,0.3)' }}>
-                  <img
-                    src="https://images.unsplash.com/photo-1531297122539-df3f53081220?w=400&q=80"
-                    alt="Laptop"
-                    className="w-full h-full object-cover"
-                  />
+                  <img src="https://images.unsplash.com/photo-1608564697071-ddf911d81370?w=400&q=80" alt="Arduino Board" className="w-full h-full object-cover" />
                 </div>
               </div>
-
-              {/* Front product: smartphone */}
-              <div
-                className="absolute"
-                style={{
-                  right: '20px',
-                  top: '110px',
-                  animation: 'floatSlow 5.5s ease-in-out infinite',
-                  animationDelay: '2s',
-                }}
-              >
+              {/* Front: Circuit Board */}
+              <div className="absolute" style={{ right: '20px', top: '110px', animation: 'floatSlow 5.5s ease-in-out infinite', animationDelay: '2s' }}>
                 <div className="w-20 h-20 rounded-2xl overflow-hidden shadow-2xl border border-white/10 bg-white/5" style={{ boxShadow: '0 0 25px rgba(0,242,254,0.15)' }}>
-                  <img
-                    src="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=300&q=80"
-                    alt="Smartphone"
-                    className="w-full h-full object-cover"
-                  />
+                  <img src="https://images.unsplash.com/photo-1555664424-778a1e5e1b48?w=300&q=80" alt="Circuit Board" className="w-full h-full object-cover" />
                 </div>
               </div>
-
-              {/* Glow circle behind products */}
-              <div
-                className="absolute rounded-full pointer-events-none"
-                style={{
-                  width: '200px',
-                  height: '200px',
-                  right: '-20px',
-                  top: '50%',
-                  transform: 'translateY(-50%)',
-                  background: 'radial-gradient(circle, rgba(79,172,254,0.12) 0%, transparent 70%)',
-                }}
-              />
+              <div className="absolute rounded-full pointer-events-none" style={{ width: '200px', height: '200px', right: '-20px', top: '50%', transform: 'translateY(-50%)', background: 'radial-gradient(circle, rgba(79,172,254,0.12) 0%, transparent 70%)' }} />
             </div>
-
             <style>{`
               @keyframes floatSlow {
                 0%, 100% { transform: translateY(0px); }
                 50% { transform: translateY(-12px); }
               }
             `}</style>
-
-            <span className="text-blue-400 font-bold uppercase tracking-widest text-xs mb-2 z-10 relative">Limited Time Offer</span>
-            <h1 className="text-4xl font-bold leading-tight mb-4 z-10 relative">
-              Minimal tech,<br />maximum potential.
-            </h1>
-            <p className="text-gray-300 max-w-xl mb-6 z-10 relative hidden sm:block">
-              Discover a curated collection of premium electronics designed to elevate your everyday workflow.
-            </p>
-            <button
-              onClick={() => {
-                document.getElementById('products')?.scrollIntoView({ behavior: 'smooth' });
-              }}
-              className="w-fit px-8 py-3 bg-white text-[#1A1A2E] font-bold rounded-lg text-sm shadow-xl z-10 relative hover:bg-gray-100 transition-colors"
-            >
-              Shop Now
-            </button>
+            <span className="text-blue-400 font-bold uppercase tracking-widest text-xs mb-2 z-10 relative">Katalog Komponen V2</span>
+            <h1 className="text-4xl font-bold leading-tight mb-4 z-10 relative">Kreativitas Tanpa Batas,<br />Komponen Berkualitas.</h1>
+            <p className="text-gray-300 max-w-xl mb-6 z-10 relative hidden sm:block">Temukan board mikrokontroler, sensor presisi, aktuator, dan perlengkapan IoT terbaik untuk proyek elektronika Anda.</p>
+            <button onClick={() => document.getElementById('products')?.scrollIntoView({ behavior: 'smooth' })} className="w-fit px-8 py-3 bg-white text-[#1A1A2E] font-bold rounded-lg text-sm shadow-xl z-10 relative hover:bg-gray-100 transition-colors">Belanja Sekarang</button>
           </section>
         </div>
       )}
-
-
       <main id="products" className="flex-grow max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 w-full">
         {searchTerm && (
           <div className="mb-6 flex items-center justify-between">
@@ -204,8 +135,21 @@ export function HomePage() {
         )}
 
         {isLoading ? (
-          <div className="flex items-center justify-center py-20">
-            <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-primary"></div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+            {[...Array(8)].map((_, i) => (
+              <div key={i} className="card animate-pulse flex flex-col h-full bg-white border border-gray-100 rounded-xl overflow-hidden shadow-sm">
+                <div className="aspect-square bg-gray-200 w-full" />
+                <div className="p-4 flex flex-col flex-grow">
+                  <div className="h-3 bg-gray-200 rounded w-1/4 mb-2" />
+                  <div className="h-4 bg-gray-200 rounded w-3/4 mb-3" />
+                  <div className="h-4 bg-gray-200 rounded w-1/2 mb-4" />
+                  <div className="mt-auto flex justify-between items-center pt-3">
+                    <div className="h-6 bg-gray-200 rounded w-1/3" />
+                    <div className="w-9 h-9 bg-gray-200 rounded-md" />
+                  </div>
+                </div>
+              </div>
+            ))}
           </div>
         ) : products.length > 0 ? (
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">

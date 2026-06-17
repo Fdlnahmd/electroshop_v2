@@ -13,17 +13,19 @@ export function Footer() {
               <span className="font-bold text-xl tracking-tight">ElectroShop</span>
             </Link>
             <p className="text-gray-500 text-sm leading-relaxed mb-4">
-              Your one-stop destination for the latest premium electronics and accessories. Designed for minimalists.
+              Pilihan terbaik untuk komponen elektronik, mikrokontroler, sensor, module IoT, dan berbagai alat pendukung elektronika berkualitas.
             </p>
           </div>
 
           <div>
-            <h4 className="font-semibold text-gray-900 mb-4">Shop</h4>
+            <h4 className="font-semibold text-gray-900 mb-4">Kategori</h4>
             <ul className="space-y-2 text-sm text-gray-600">
-              <li><Link to="/?category=Smartphones" className="hover:text-primary transition-colors">Smartphones</Link></li>
-              <li><Link to="/?category=Laptops" className="hover:text-primary transition-colors">Laptops</Link></li>
-              <li><Link to="/?category=Audio" className="hover:text-primary transition-colors">Audio</Link></li>
-              <li><Link to="/?category=Accessories" className="hover:text-primary transition-colors">Accessories</Link></li>
+              <li><Link to="/?category=Arduino" className="hover:text-primary transition-colors">Arduino</Link></li>
+              <li><Link to="/?category=IC" className="hover:text-primary transition-colors">IC</Link></li>
+              <li><Link to="/?category=Sensor" className="hover:text-primary transition-colors">Sensor</Link></li>
+              <li><Link to="/?category=Resistor" className="hover:text-primary transition-colors">Resistor</Link></li>
+              <li><Link to="/?category=Kapasitor" className="hover:text-primary transition-colors">Kapasitor</Link></li>
+              <li><Link to="/?category=LED" className="hover:text-primary transition-colors">LED</Link></li>
             </ul>
           </div>
 

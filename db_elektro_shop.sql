@@ -128,7 +128,7 @@ INSERT INTO products (name, description, price, stock, category_id, image) VALUE
 
 -- Insert sample admin user (password: admin123)
 INSERT INTO users (name, email, password, phone, address) VALUES
-('Admin', 'admin@elektroshop.com', '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', '081234567890', 'Jakarta Pusat');
+('Admin', 'admin@elektroshop.com', '$2y$10$Ww/GCJgF.IMx/mlaulUADel8ZNOsGm3bYb1YRxWyw/BHupZqe30xS', '081234567890', 'Jakarta Pusat');
 
 -- Create indexes for better performance
 CREATE INDEX idx_products_category ON products(category_id);
